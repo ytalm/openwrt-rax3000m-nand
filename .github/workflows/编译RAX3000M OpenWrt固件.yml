@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: RAX3000M-237
+name: 编译RAX3000M OpenWrt固件
 
 on:
   repository_dispatch:
