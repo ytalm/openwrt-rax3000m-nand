@@ -30,7 +30,7 @@ on:
 #编辑任意指定文件触发开始编译(去掉下面5个#开启,最下面一行是指定修改什么文件就触发编译,我现在是修改mod.config文件触发)  
   push:                               # push 操作
     branches:                         # 分支
-      - master                        # 主分支
+      - openwrt-21.02                        # 主分支
 # config触发开始编译  
     paths:                            # 路径
       - "my.config"                  # 监听my.config的push操作
