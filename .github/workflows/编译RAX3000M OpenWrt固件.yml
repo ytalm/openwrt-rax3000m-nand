@@ -1,12 +1,16 @@
-#
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
-# https://github.com/P3TERX/Actions-OpenWrt
+#=================================================
+# 自动构建 OpenWrt RAX3000M
+# https://github.com/ytalm/OpenWrt-RAX3000M
 # Description: Build OpenWrt using GitHub Actions
+# Lisence: This is free software, licensed under the MIT License
+# Author: flyheart
+# 感谢p3terx大神的一键编译脚本
+# https://github.com/P3TERX/Actions-OpenWrt
+# Blog: https://p3terx.com
+#=================================================
 #
+#修改以下代码或者开启触发开关都好，要严格按格式对好,前面有多少空格也要看清楚
+#代码里有 name: 后面的内容随便改,冒号后面是有个空格的,如果修改固件名字就要考虑能不能显示出你想要的
 
 name: 编译RAX3000M OpenWrt固件
 
@@ -23,7 +27,7 @@ env:
   REPO_URL: https://github.com/bwnqx/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 237-3km.config
+  CONFIG_FILE: my.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
