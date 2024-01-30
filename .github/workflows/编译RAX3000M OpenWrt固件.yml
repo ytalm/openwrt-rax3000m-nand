@@ -49,18 +49,21 @@ on:
 ### 环境变量设置
 
 env:
-  REPO_URL: https://github.com/bwnqx/immortalwrt-mt798x
-  REPO_BRANCH: openwrt-21.02
-  FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: my.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: false
-  UPLOAD_WETRANSFER: false
-  UPLOAD_RELEASE: false
-  TZ: Asia/Shanghai
+  REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x           #编译固件源码链接（请勿修改）
+  REPO_BRANCH: openwrt-21.02                                #源码链接的分支（请勿修改）
+  FEEDS_CONF: feeds.conf.default               
+  CONFIG_FILE: my.config                            #配置文件（可SSH远程定制固件插件，也可在本地提取配置粘贴到此文件）
+  DIY_P1_SH: diy-part1.sh                            #自定义执行文件
+  DIY_P2_SH: diy-part2.sh                            #自定义执行文件
+  UPLOAD_BIN_DIR: true                               #上传【bin文件夹】到github空间（true=开启）（false=关闭）
+  UPLOAD_FIRMWARE: false                              #上传固件到github空间（true=开启）（false=关闭）
+  UPLOAD_COWTRANSFER: false                          #上传固件到到【奶牛快传】（true=开启）（false=关闭）   
+  UPLOAD_WETRANSFER: false                             #上传固件到到【WETRANSFER】（true=开启）（false=关闭）
+  UPLOAD_RELEASE: false                              # 上传固件到 Github Releases
+  DELETE_OLD_WORKFLOW: true                          # 删除早期的 workflow 任务
+  DELETE_OLD_RELEASE: true                           # 删除早期的 Releases 任务
+  TZ: Asia/Shanghai                                  #时区 亚洲/上海
+### 结束
 
 jobs:
   build:
