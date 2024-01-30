@@ -24,15 +24,6 @@ on:
         default: 'false'
 
 
-#定时触发开始编译(开启定时编译请先关闭SSH,要不然SSH没人管,会卡SSH编译失败)
-  schedule:                           # 时间表
-    - cron: 0 4 28 * *                 # 每月28日国际时间4点，北京时间中午12点执行(北京+8)
-#          分 时 日 月 周5  
-#点☆Star触发开始编译  
-  watch:                              # 监视操作
-    types: started                    # 点击 star 之后
-
-### 环境变量设置
 
 env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x           #编译固件源码链接（请勿修改）
