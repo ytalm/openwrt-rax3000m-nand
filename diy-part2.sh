@@ -20,7 +20,7 @@ sed -i 's/192.168.1.1/172.16.1.1/g' ./package/base-files/files/bin/config_genera
 # sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
-sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+# sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 # 修改默认主题Modify default THEME
 # sed -i 's/luci-theme-bootstrap/luci-theme-ATMaterial/g' ./feeds/luci/collections/luci/Makefile
