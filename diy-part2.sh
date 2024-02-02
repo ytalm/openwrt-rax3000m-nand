@@ -11,7 +11,7 @@
 #
 # 通过修改diy-part2.sh文件可以自定义默认IP，登陆密码等。按我的需要现在的默认IP为172.16.1.1
 # 修改openwrt登陆地址,把下面的172.16.1.1修改成你想要的就可以了
-sed -i 's/192.168.1.1/172.16.1.1/g' ./package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/172.16.10.1/g' ./package/base-files/files/bin/config_generate
 
 # 修改主机名字，把OpenWrt-123修改你喜欢的就行（不能纯数字或者使用中文）
 # sed -i 's/OpenWrt/OpenWrt-R619AC/g' ./package/base-files/files/bin/config_generate
