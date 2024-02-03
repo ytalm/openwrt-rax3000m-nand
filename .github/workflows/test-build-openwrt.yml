@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: RAX3000M-237
+name: TEST-OPENWRT-RAX3000M-NAND
 
 on:
   repository_dispatch:
