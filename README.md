@@ -72,11 +72,8 @@ cp -f defconfig/mt7986-ax6000.config .config
 cp -f defconfig/mt7986-ax6000-256m.config .config
 # 对于AX4200方案的mt7986（如BPI-R3 MINI），使用mt7986-ax4200.config
 cp -f defconfig/mt7986-ax4200.config .config
-
+```
 3 运行make menuconfig定制固件
-
 4 运行make V=s开始编译固件，为了加快编译速度，可以使用make V=s -j$(nproc)
 
 ### 注意事项
-
-
