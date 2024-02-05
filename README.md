@@ -1,3 +1,4 @@
+- 默认登录地址：http://172.16.10.1或http://immortalwrt.lan，用户名：root，密码：none
 # CMCC_RAX3000M
 RAX3000M是中国移动于2023年推出的一款高性价比路由器。
 
@@ -43,7 +44,6 @@ mtd write /tmp/mt7981_cmcc_rax3000m-fip-fixed-parts.bin FIP
 
 ### immortalwrt-mt798x项目介绍
 - https://cmi.hanwckf.top/p/immortalwrt-mt798x/
-默认登录地址：http://172.16.10.1或http://immortalwrt.lan，用户名：root，密码：none
 
 ImmortalWrt 是OpenWrt的一个分支，移植了更多的软件包，支持更多的设备，性能更好，并且针对中国大陆用户进行了特别优化。
 immortalwrt-mt798x基于immortalwrt项目，特点如下
@@ -74,6 +74,7 @@ cp -f defconfig/mt7986-ax6000-256m.config .config
 cp -f defconfig/mt7986-ax4200.config .config
 ```
 3 运行make menuconfig定制固件
+
 4 运行make V=s开始编译固件，为了加快编译速度，可以使用make V=s -j$(nproc)
 
 ### 注意事项
