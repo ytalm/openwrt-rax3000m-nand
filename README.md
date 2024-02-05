@@ -65,7 +65,7 @@ https://github.com/hanwckf/immortalwrt-mt798x
 
 #对于mt7981，使用mt7981-ax3000.config
 
-cp -f defconfig/mt7981-ax3000.config .config
+#cp -f defconfig/mt7981-ax3000.config .config
 
 #对于mt7986，使用mt7986-ax6000.config
 cp -f defconfig/mt7986-ax6000.config .config
