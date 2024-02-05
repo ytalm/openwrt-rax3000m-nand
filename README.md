@@ -57,8 +57,9 @@ mt7981/mt7986均支持两个ppe，每个ppe有32k Entry（当有线驱动使用A
 https://github.com/hanwckf/immortalwrt-mt798x
 
 编译说明
-拉取固件源码，参考immortalwrt的README搭建openwrt编译环境，并更新feeds
-使用defconfig目录内预置的配置文件作为配置模板，
+1 拉取固件源码，参考immortalwrt的README搭建openwrt编译环境，并更新feeds
+
+2 使用defconfig目录内预置的配置文件作为配置模板，
 # defconfig/luci-app-mtk-deprecated目录里的配置文件使用旧版luci-app-mtk作为无线配置工具
 
 # 对于mt7981，使用mt7981-ax3000.config
@@ -73,8 +74,9 @@ cp -f defconfig/mt7981-ax3000.config .config
 # 对于AX4200方案的mt7986（如BPI-R3 MINI），使用mt7986-ax4200.config
 #cp -f defconfig/mt7986-ax4200.config .config
 
-运行make menuconfig定制固件
-运行make V=s开始编译固件，为了加快编译速度，可以使用make V=s -j$(nproc)
+3 运行make menuconfig定制固件
+4 运行make V=s开始编译固件，为了加快编译速度，可以使用make V=s -j$(nproc)
+
 注意事项
 
 
