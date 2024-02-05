@@ -52,3 +52,67 @@ immortalwrt-mt798x基于immortalwrt项目，特点如下
 mt7981/mt7986均支持两个ppe，每个ppe有32k Entry（当有线驱动使用ADMAv1时，每个PPE最大支持16k Entry）
 使用mtwifi原厂无线驱动（目前默认使用7.6.6.1版本），默认开启802.11k，支持warp在内的所有加速特性
 新开发的mtwifi-cfg无线配置工具支持openwrt的原生luci界面以及netifd-wireless标准接口。除此以外，还支持mtk原厂提供的luci-app-mtk和wifi-profile
+
+支持机型
+路由器型号	CPU	RAM	FLASH	有线规格	无线规格	USB
+360 T7/T7U/T7M	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+ZR3020	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+Cetron CT3003	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+JCG Q30 PRO	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+GL.iNet GL-MT3000	MT7981	512M	256M SPI-NAND	1G(WAN)+2.5G(LAN)	AX3000	√
+GL.iNet GL-MT2500	MT7981	1G	8G EMMC	1G(WAN)+2.5G(LAN)	×	√
+康佳 KOMI-A31	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+小米 WR30U/T/M	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+乐橙 LC-HX3001	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+H3C NX30 Pro	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+CMCC RAX3000M	MT7981	512M	128M SPI-NAND	4*1G	AX3000	√
+CMCC RAX3000M 算力版	MT7981	512M	64G EMMC	4*1G	AX3000	√
+CMCC A10	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+安博通 ABT ASR3000	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+创联腾 CLT-R30B1	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+小米 AX3000T	MT7981	256M	128M SPI-NAND	4*1G	AX3000	×
+TP-LINK XDR6086	MT7986	512M	128M SPI-NAND	1G+2*2.5G	AX6000	√
+TP-LINK XDR6088	MT7986	512M	128M SPI-NAND	4*1G+2*2.5G	AX6000	√
+Banana Pi BPI-R3 Mini	MT7986	2G	128M SPI-NAND + 8G EMMC	2*2.5G	AX4200	√
+磊科 N60	MT7986	256M	128M SPI-NAND	4*1G+2.5G	AX6000	×
+GL.iNet GL-MT6000	MT7986	1G	8G EMMC	4*1G+2*2.5G	AX6000	√
+红米 AX6000	MT7986	512M	128M SPI-NAND	4*1G	AX6000	×
+锐捷 RG-X60 PRO	MT7986	512M	128M SPI-NAND	4*1G+2.5G	AX6000	×
+固件源码
+https://github.com/hanwckf/immortalwrt-mt798x
+
+编译说明
+拉取固件源码，参考immortalwrt的README搭建openwrt编译环境，并更新feeds
+使用defconfig目录内预置的配置文件作为配置模板，
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+# defconfig/luci-app-mtk-deprecated目录里的配置文件使用旧版luci-app-mtk作为无线配置工具
+
+# 对于mt7981，使用mt7981-ax3000.config
+cp -f defconfig/mt7981-ax3000.config .config
+
+# 对于mt7986，使用mt7986-ax6000.config
+#cp -f defconfig/mt7986-ax6000.config .config
+
+# 对于256M内存的mt7986（如磊科N60），使用mt7986-ax6000-256m.config
+#cp -f defconfig/mt7986-ax6000-256m.config .config
+
+# 对于AX4200方案的mt7986（如BPI-R3 MINI），使用mt7986-ax4200.config
+#cp -f defconfig/mt7986-ax4200.config .config
+Copy
+运行make menuconfig定制固件
+运行make V=s开始编译固件，为了加快编译速度，可以使用make V=s -j$(nproc)
+注意事项
+
+
