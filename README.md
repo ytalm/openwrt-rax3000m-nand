@@ -61,20 +61,17 @@ https://github.com/hanwckf/immortalwrt-mt798x
 
 2 使用defconfig目录内预置的配置文件作为配置模板，
 
+```bash
 #defconfig/luci-app-mtk-deprecated目录里的配置文件使用旧版luci-app-mtk作为无线配置工具
 
-#对于mt7981，使用mt7981-ax3000.config
-
-#cp -f defconfig/mt7981-ax3000.config .config
-
-#对于mt7986，使用mt7986-ax6000.config
+# 对于mt7981，使用mt7981-ax3000.config
+cp -f defconfig/mt7981-ax3000.config .config
+# 对于mt7986，使用mt7986-ax6000.config
 cp -f defconfig/mt7986-ax6000.config .config
-
-#对于256M内存的mt7986（如磊科N60），使用mt7986-ax6000-256m.config
+# 对于256M内存的mt7986（如磊科N60），使用mt7986-ax6000-256m.config
 cp -f defconfig/mt7986-ax6000-256m.config .config
-
-#对于AX4200方案的mt7986（如BPI-R3 MINI），使用mt7986-ax4200.config
-          cp -f defconfig/mt7986-ax4200.config .config
+# 对于AX4200方案的mt7986（如BPI-R3 MINI），使用mt7986-ax4200.config
+cp -f defconfig/mt7986-ax4200.config .config
 
 3 运行make menuconfig定制固件
 
