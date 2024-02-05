@@ -43,7 +43,8 @@ mtd write /tmp/mt7981_cmcc_rax3000m-fip-fixed-parts.bin FIP
 
 ### immortalwrt-mt798x项目介绍
 - https://cmi.hanwckf.top/p/immortalwrt-mt798x/
-默认登录地址：http://172.16.1.1或http://immortalwrt.lan，用户名：root，密码：none
+默认登录地址：http://172.16.10.1或http://immortalwrt.lan，用户名：root，密码：none
+
 ImmortalWrt 是OpenWrt的一个分支，移植了更多的软件包，支持更多的设备，性能更好，并且针对中国大陆用户进行了特别优化。
 immortalwrt-mt798x基于immortalwrt项目，特点如下
 基于immortalwrt 21.02分支，内核版本5.4，目前仅支持mt7981/mt7986
