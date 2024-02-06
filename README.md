@@ -107,6 +107,34 @@ immortalwrt-mt798x早期采用的是mtk-sdk提供的luci-app-mtk和wifi-profile�
 - luci-app-mtk：源自mtk-sdk提供的配置工具，需要配合wifi-profile脚本使用，可调整无线驱动的几乎所有参数，配置界面较为简陋
 
 mtwifi-cfg与luci-app-mtk不能在固件里共存，编译时必须选择其中之一，目前最新源码已默认使用mtwifi-cfg作为无线配置工具，如需使用旧版luci-app-mtk，请选择defconfig/luci-app-mtk-deprecated目录里的配置模板文件进行编译
+### mtwifi-cfg无线配置说明
+mtwifi-cfg是我为mt798x无线平台新开发的配置工具，支持openwrt的luci和netifd-wireless无线控制界面，具有以下特点：
 
+使用openwrt原版luci无线配置界面，配置方法非常接近原版openwrt
+支持apcli中继功能
+支持已连接站点信息显示（含apcli连接信息）
+支持读取无线芯片实际发射功率
+支持mtk原厂无线驱动可配置的大部分选项（含弱信号剔除等）
+支持WPA-PSK/WPA2-PSK/WPA3-PSK/OWE无线认证方式，支持AP/APCLI工作模式，支持最多开启16个MBSSID
+部分老旧的2.4G智能家居设备可能无法连接，请尝试以下无线设置：
+使用WPA-PSK+AES/WPA2-PSK+AES认证加密方式
+将2.4G无线设置为N模式
+关闭2.4G的MU-MIMO功能（在较新的源码里，无线设置为N模式时自动关闭MU-MIMO）
+设置频宽为20MHz，并关闭强制40MHz开关
+### mtwifi-cfg配套源码
+mtwifi-cfg及配套的补丁完全开源，具体参考immortalwrt-mt798x源码内下列目录
+
+- package/mtk/applications/mtwifi-cfg
+- package/mtk/applications/luci-app-mtwifi-cfg
+- package/mtk/drivers/mt_wifi/patches
+- package/network/utils/iwinfo
+- package/network/config/netifd/patches
+### luci-app-mtk无线配置说明
+luci-app-mtk来源于mtk-sdk，采用wifi-profile作为无线控制脚本，不支持openwrt的原版luci界面和netifd-wireless
+
+luci-app-mtk配置界面已基本汉化，可显示驱动版本、芯片温度、已连接客户端信息等，下面以MT7981为例
+第一级MT7981右侧的配置按钮为chip_cfg，配置无线驱动基础参数，一般无需修改
+第二级MT7981.1.1右侧的配置按钮为dev_cfg，可配置信道、国家代码等频段相关参数
+第三级接口右侧的配置按钮为vif_cfg，可配置SSID、加密方式、无线中继扫描等
 
 **默认登录地址：http://172.16.10.1或http://immortalwrt.lan，用户名：root，密码：none**
