@@ -1,4 +1,4 @@
-**默认登录地址：http://172.16.10.1或http://immortalwrt.lan，用户名：root，密码：none**
+# 默认登录地址：http://172.16.10.1或http://immortalwrt.lan，用户名：root，密码：none
 # CMCC_RAX3000M
 RAX3000M是中国移动于2023年推出的一款高性价比路由器。
 
