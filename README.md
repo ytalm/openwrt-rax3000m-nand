@@ -77,6 +77,7 @@ cp -f defconfig/mt7986-ax4200.config .config
 4 运行make V=s开始编译固件，为了加快编译速度，可以使用make V=s -j$(nproc)
 
 ### 注意事项
+
 ```text
 **GL.iNet MT3000/MT2500的WAN/LAN口对应的GMAC不符合参考设计，为了保证HNAT加速功能正常，immortalwrt-mt798x最新源码中已按照mtk公版方案进行修正，上述两款路由器均使用2.5G口作为LAN口
 不要在开启hwnat时使用主线的flow-offload，即不要启用turbo-acc的flow-offload加速方式
