@@ -54,7 +54,7 @@ mt7981/mt7986均支持两个ppe，每个ppe有32k Entry（当有线驱动使用A
 新开发的mtwifi-cfg无线配置工具支持openwrt的原生luci界面以及netifd-wireless标准接口。除此以外，还支持mtk原厂提供的luci-app-mtk和wifi-profile
 
 ### 固件源码
-https://github.com/hanwckf/immortalwrt-mt798x
+- https://github.com/hanwckf/immortalwrt-mt798x
 
 ### 编译说明
 1 拉取固件源码，参考immortalwrt的README搭建openwrt编译环境，并更新feeds
