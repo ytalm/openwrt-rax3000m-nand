@@ -80,15 +80,15 @@ cp -f defconfig/mt7986-ax4200.config .config
 
 **GL.iNet MT3000/MT2500的WAN/LAN口对应的GMAC不符合参考设计，为了保证HNAT加速功能正常，immortalwrt-mt798x最新源码中已按照mtk公版方案进行修正，上述两款路由器均使用2.5G口作为LAN口**
 
-**不要在开启hwnat时使用主线的flow-offload，即不要启用turbo-acc的flow-offload加速方式**
+- **不要在开启hwnat时使用主线的flow-offload，即不要启用turbo-acc的flow-offload加速方式**
 
-**推荐选择WPA2-PSK/WPA3-PSK无线认证方式以获得最好的兼容性**
+- **推荐选择WPA2-PSK/WPA3-PSK无线认证方式以获得最好的兼容性**
 
-**由于mt798x无线驱动中继扫描所需时间较长，对应频段关联的无线设备可能会在扫描期间断开。因此在触发中继扫描时，要使用有线或者非扫描频段连接路由器操作**
+- **由于mt798x无线驱动中继扫描所需时间较长，对应频段关联的无线设备可能会在扫描期间断开。因此在触发中继扫描时，要使用有线或者非扫描频段连接路由器操作**
 
-**因未经测试，不推荐同时开启shortcut-fe**
+- **因未经测试，不推荐同时开启shortcut-fe**
 
-**当前无线驱动的IGMP Snooping功能可能存在问题，新版源码已默认关闭此功能，较旧版本的固件可以手动在无线设置中禁用IGMP Snooping以避免出现问题**
+- **当前无线驱动的IGMP Snooping功能可能存在问题，新版源码已默认关闭此功能，较旧版本的固件可以手动在无线设置中禁用IGMP Snooping以避免出现问题**
 
 
 
