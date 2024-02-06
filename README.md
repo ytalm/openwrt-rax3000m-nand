@@ -93,12 +93,13 @@ cp -f defconfig/mt7986-ax4200.config .config
 ### 硬件加速功能说明
 immortalwrt-mt798x支持mt798x的所有原厂有线、无线硬件加速特性，除此以外还支持以下功能
 
-可通过luci直接设置hwnat PPE的启用数量、PPE加速阈值（当NAT连接速率大于阈值时会被硬件加速，默认是30pps，设置更小的值会使NAT连接更容易被加速）、macvlan支持（支持macvlan作为WAN的加速功能）、IPv6开关等
-每个NAT连接需要占用2个Entry（进站和出站方向），当使用2个PPE时，由GMAC2进入的包将使用PPE1加速，其它情况下均使用PPE0加速。当路由器仅使用GMAC1时（如JCG Q30，CT3003等路由器），PPE1将不会起任何作用
-mt7981/mt7986均支持2个PPE，每个PPE有32768个Entry，当有线驱动使用ADMAv1时，每个PPE最多支持16384个Entry。按照mtk-sdk和最新openwrt主线的有线驱动，mt7981的ADMAv2存在不可修复的问题，immortalwrt-mt798x已参照上述源码将mt7981 ADMAv2回退至ADMAv1，mt7986不受影响
-immortalwrt-mt798x最新源码已支持外部网络设备（如USB3.0 5G模块、USB-RNDIS/ECM网卡等）到有线和无线的双向hwnat PPE加速，mtk-sdk原厂驱动不支持此功能。此功能可降低使用外部网络设备时的CPU占用率，实测mt7981在外接USB-RNDIS/ECM网卡时可跑满千兆速率（原厂只能达到300-500Mbps）。目前仅在RAX3000M中开启，MT7986机型暂未测试
-immortalwrt-mt798x支持硬件QoS的所有特性，该功能已集成到luci-app-eqos-mtk，具体用法参考luci里面的说明。为确保PPE尽可能接管所有的NAT连接，当开启硬件QoS时，PPE加速阈值将会被设置为5pps
-同一个MBSSID内的无线客户端之间互传数据不支持硬件加速，不同MBSSID之间的无线客户端之间互传数据支持完全硬件加速
+- 可通过luci直接设置hwnat PPE的启用数量、PPE加速阈值（当NAT连接速率大于阈值时会被硬件加速，默认是30pps，设置更小的值会使NAT连接更容易被加速）、macvlan支持（支持macvlan作为WAN的加速功能）、IPv6开关等
+- 每个NAT连接需要占用2个Entry（进站和出站方向），当使用2个PPE时，由GMAC2进入的包将使用PPE1加速，其它情况下均使用PPE0加速。当路由器仅使用GMAC1时（如JCG Q30，CT3003等路由器），PPE1将不会起任何作用
+- mt7981/mt7986均支持2个PPE，每个PPE有32768个Entry，当有线驱动使用ADMAv1时，每个PPE最多支持16384个Entry。按照mtk-sdk和最新openwrt主线的有线驱动，mt7981的ADMAv2存在不可修复的问题，immortalwrt-mt798x已参照上述源码将mt7981 ADMAv2回退至ADMAv1，mt7986不受影响
+- immortalwrt-mt798x最新源码已支持外部网络设备（如USB3.0 5G模块、USB-RNDIS/ECM网卡等）到有线和无线的双向hwnat PPE加速，mtk-sdk原厂驱动不支持此功能。此功能可降低使用外部网络设备时的CPU占用率，实测mt7981在外接USB-RNDIS/ECM网卡时可跑满千兆速率（原厂只能达到300-500Mbps）。目前仅在RAX3000M中开启，MT7986机型暂未测试
+- immortalwrt-mt798x支持硬件QoS的所有特性，该功能已集成到luci-app-eqos-mtk，具体用法参考luci里面的说明。为确保PPE尽可能接管所有的NAT连接，当开启硬件QoS时，PPE加速阈值将会被设置为5pps
+- 同一个MBSSID内的无线客户端之间互传数据不支持硬件加速，不同MBSSID之间的无线客户端之间互传数据支持完全硬件加速
+
 ### mtwifi无线配置工具说明
 
 
