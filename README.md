@@ -101,7 +101,12 @@ immortalwrt-mt798x支持mt798x的所有原厂有线、无线硬件加速特性�
 - 同一个MBSSID内的无线客户端之间互传数据不支持硬件加速，不同MBSSID之间的无线客户端之间互传数据支持完全硬件加速
 
 ### mtwifi无线配置工具说明
+immortalwrt-mt798x早期采用的是mtk-sdk提供的luci-app-mtk和wifi-profile作为无线配置工具，并且在mtk-sdk基础上进行了大幅度的精简、修复、适配和汉化以尽可能满足日常使用需求。2023年12月，我开发了新的mtwifi-cfg配置工具，并配套做好了iwinfo和netifd相关支持，至此immortalwrt-mt798x可以选择两种完全不同的无线配置工具，特点分别如下：
 
+- mtwifi-cfg：为mtwifi设计的无线配置工具，兼容openwrt原生luci和netifd，可调整无线驱动的参数较少，配置界面美观友好，由于是新开发的工具，可能存在一些问题
+- luci-app-mtk：源自mtk-sdk提供的配置工具，需要配合wifi-profile脚本使用，可调整无线驱动的几乎所有参数，配置界面较为简陋
+
+mtwifi-cfg与luci-app-mtk不能在固件里共存，编译时必须选择其中之一，目前最新源码已默认使用mtwifi-cfg作为无线配置工具，如需使用旧版luci-app-mtk，请选择defconfig/luci-app-mtk-deprecated目录里的配置模板文件进行编译
 
 
 **默认登录地址：http://172.16.10.1或http://immortalwrt.lan，用户名：root，密码：none**
