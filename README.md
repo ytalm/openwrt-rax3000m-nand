@@ -1,4 +1,3 @@
-**默认登录地址：http://172.16.10.1或http://immortalwrt.lan，用户名：root，密码：none**
 # CMCC_RAX3000M
 RAX3000M是中国移动于2023年推出的一款高性价比路由器。
 
@@ -78,3 +77,10 @@ cp -f defconfig/mt7986-ax4200.config .config
 4 运行make V=s开始编译固件，为了加快编译速度，可以使用make V=s -j$(nproc)
 
 ### 注意事项
+
+
+
+
+
+
+**默认登录地址：http://172.16.10.1或http://immortalwrt.lan，用户名：root，密码：none**
