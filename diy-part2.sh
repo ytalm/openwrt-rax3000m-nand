@@ -23,4 +23,4 @@ sed -i 's/192.168.1.1/172.16.10.1/g' ./package/base-files/files/bin/config_gener
 # sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 # 修改默认主题Modify default THEME
-# sed -i 's/luci-theme-bootstrap/luci-theme-ATMaterial/g' ./feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial_new/g' ./feeds/luci/collections/luci/Makefile
