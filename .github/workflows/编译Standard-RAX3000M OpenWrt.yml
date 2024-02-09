@@ -60,7 +60,7 @@ env:
   UPLOAD_COWTRANSFER: false                          #上传固件到到【奶牛快传】（true=开启）（false=关闭）   
   UPLOAD_WETRANSFER: false                             #上传固件到到【WETRANSFER】（true=开启）（false=关闭）
   UPLOAD_RELEASE: false                              # 上传固件到 Github Releases
-  DELETE_OLD_WORKFLOW: true                          # 删除早期的 workflow 任务
+  DELETE_OLD_WORKFLOW: false                          # 删除早期的 workflow 任务
   DELETE_OLD_RELEASE: true                           # 删除早期的 Releases 任务
   TZ: Asia/Shanghai                                  #时区 亚洲/上海
 ### 结束
