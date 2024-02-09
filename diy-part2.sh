@@ -34,5 +34,5 @@ sed -i 's/OpenWrt/OpenWrt-RAX3000M/g' ./package/base-files/files/bin/config_gene
 # sed -i 's/root::0:0:99999:7:::/root:$1$kWRCl0Y2$7JL\/jLAF1xoVIiIMdTO5f.:16788:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # 修改默认主题Modify default THEME
-sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial_new/g' ./feeds/luci/collections/luci/Makefile
+# sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial_new/g' ./feeds/luci/collections/luci/Makefile
 
