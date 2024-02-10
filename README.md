@@ -48,9 +48,6 @@ git clone https://github.com/x-wrt/x-wrt
 ## CMCC_RAX3000M 不死uboot
 - hanwckf-[hanwckf/bl-mt798x](https://github.com/hanwckf/bl-mt798x).
 
-## CMCC_RAX3000M 不死ubootmod
-- HZFrodo-[HZFrodo/uboot-mediatek: add support for Xiaomi Redmi Router AX6000](https://github.com/openwrt/openwrt/commit/1613e3340b829ea9aa6da954bf0ff98214b71751).
-
 # CMCC_RAX3000M
 RAX3000M是中国移动于2023年推出的一款高性价比路由器。
 
