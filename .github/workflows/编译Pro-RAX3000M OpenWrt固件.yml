@@ -12,7 +12,7 @@
 #修改以下代码或者开启触发开关都好，要严格按格式对好,前面有多少空格也要看清楚
 #代码里有 name: 后面的内容随便改,冒号后面是有个空格的,如果修改固件名字就要考虑能不能显示出你想要的
 
-name: 编译Pro-RAX3000M OpenWrt固件
+name: 编译PRO-RAX3000M OpenWrt固件
 
 on:
   repository_dispatch:
@@ -27,16 +27,14 @@ on:
         default: 'false'
 
 #release发布触发开始编译(只是一个触发条件,不会发布的,又麻烦,没卵用,不用研究) 
-  release:
-    types: published
-  
+      release:
+        description: 'Release firmware'
+        required: false
+        default: 'false'
 #编辑任意指定文件触发开始编译(去掉下面5个#开启,最下面一行是指定修改什么文件就触发编译,我现在是修改mod.config文件触发)  
   push:                               # push 操作
     branches:                         # 分支
       - master                        # 主分支
-# config触发开始编译  
-    paths:                            # 路径
-      - "Pro.config"                  # 监听Pro.config的push操作
 
 #定时触发开始编译(开启定时编译请先关闭SSH,要不然SSH没人管,会卡SSH编译失败)
   schedule:                           # 时间表
@@ -70,7 +68,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: 检验结束  Checkout                          # 1.导入主分支
+    - name:  检验结束  Checkout                         # 1.导入主分支
       uses: actions/checkout@main
 
     - name: 初始化编译环境  Initialization environment                # 2.初始化环境
@@ -188,9 +186,9 @@ jobs:
 
     - name: 生成版本标签  Generate release tag
       id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: (env.UPLOAD_RELEASE == 'true' && github.event.inputs.release == 'true') && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
+        echo "::set-output name=release_tag::$(date +v%Y%m%d%H%M%S)"
         touch release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
@@ -206,17 +204,17 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
-    - name: 删除旧的工作流  Delete workflow runs
-      uses: GitRML/delete-workflow-runs@main
-      with:
-        retain_days: 1
-        keep_minimum_runs: 3
+    # - name: 删除旧的工作流  Delete workflow runs
+    #   uses: GitRML/delete-workflow-runs@main
+    #   with:
+    #     retain_days: 1
+    #     keep_minimum_runs: 3
 
-    - name: 删除旧的发布版本  Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 3
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - name: 删除旧的发布版本  Remove old Releases
+    #   uses: dev-drprasad/delete-older-releases@v0.1.0
+    #   if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+    #   with:
+    #     keep_latest: 3
+    #     delete_tags: true
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
