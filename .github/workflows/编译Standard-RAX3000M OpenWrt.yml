@@ -31,11 +31,6 @@ on:
         description: 'Release firmware'
         required: false
         default: 'false'
-#编辑任意指定文件触发开始编译(去掉下面5个#开启,最下面一行是指定修改什么文件就触发编译,我现在是修改mod.config文件触发)  
-  push:                               # push 操作
-    branches:                         # 分支
-      - master                        # 主分支
-
 #定时触发开始编译(开启定时编译请先关闭SSH,要不然SSH没人管,会卡SSH编译失败)
   schedule:                           # 时间表
     - cron: 0 4 28 * *                 # 每月28日国际时间4点，北京时间中午12点执行(北京+8)
@@ -53,8 +48,8 @@ env:
   CONFIG_FILE: Standard.config                            #配置文件（可SSH远程定制固件插件，也可在本地提取配置粘贴到此文件）
   DIY_P1_SH: diy-part1.sh                            #自定义执行文件
   DIY_P2_SH: diy-part2.sh                            #自定义执行文件
-  UPLOAD_BIN_DIR: true                               #上传【bin文件夹】到github空间（true=开启）（false=关闭）
-  UPLOAD_FIRMWARE: false                              #上传固件到github空间（true=开启）（false=关闭）
+  UPLOAD_BIN_DIR: false                               #上传【bin文件夹】到github空间（true=开启）（false=关闭）
+  UPLOAD_FIRMWARE: true                              #上传固件到github空间（true=开启）（false=关闭）
   UPLOAD_COWTRANSFER: false                          #上传固件到到【奶牛快传】（true=开启）（false=关闭）   
   UPLOAD_WETRANSFER: false                             #上传固件到到【WETRANSFER】（true=开启）（false=关闭）
   UPLOAD_RELEASE: false                              # 上传固件到 Github Releases
