@@ -31,6 +31,8 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
+  DELETE_OLD_WORKFLOW: false                          # 删除早期的 workflow 任务
+  DELETE_OLD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
