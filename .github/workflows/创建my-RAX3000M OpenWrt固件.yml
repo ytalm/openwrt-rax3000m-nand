@@ -122,7 +122,7 @@ jobs:
     - name: 配置 Feeds
       run: |
         cd openwrt
-        echo "src-git kenzo https://github.com/kenzok8/openwrt-packages" >> ./feeds.conf.default
+        echo "src-git 281677160 https://github.com/281677160/openwrt-package" >> ./feeds.conf.default
         echo "src-git haiibo https://github.com/haiibo/openwrt-packages" >> ./feeds.conf.default
         echo "src-git OpenClash https://github.com/vernesong/OpenClash.git" >> ./feeds.conf.default
         ./scripts/feeds update -a
