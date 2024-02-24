@@ -127,7 +127,7 @@ jobs:
         echo "src-git OpenClash https://github.com/vernesong/OpenClash.git" >> ./feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        cp -f $GITHUB_WORKSPACE/RAX3000M-123.config $GITHUB_WORKSPACE/openwrt/.config
+        cp -f $GITHUB_WORKSPACE/my.config $GITHUB_WORKSPACE/openwrt/.config
       
     - name: 修改 Lan IP(修改后面的IP）
       run: |
