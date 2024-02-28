@@ -19,7 +19,7 @@
 #sed -i '$a src-git small https://github.com/kenzok8/small-package' feeds.conf.default
 sed -i '$a src-git 281677160 https://github.com/281677160/openwrt-package' feeds.conf.default
 sed -i '$a src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
-sed -i '$a src-git ytalm https://github.com/ytalm/my-packages' feeds.conf.default
+#sed -i '$a src-git ytalm https://github.com/ytalm/my-packages' feeds.conf.default
 #sed -i '$a src-git Aibx https://github.com/Aibx/OpenWRT-Packages' feeds.conf.default
 #sed -i '$a src-git fw876 https://github.com/fw876/helloworld' feeds.conf.default
 #sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
