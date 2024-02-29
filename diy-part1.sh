@@ -21,8 +21,6 @@ sed -i '$a src-git 281677160 https://github.com/281677160/openwrt-package' feeds
 sed -i '$a src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
 sed -i '$a src-git ytalm https://github.com/ytalm/my-packages' feeds.conf.default
 #sed -i '$a src-git Aibx https://github.com/Aibx/OpenWRT-Packages' feeds.conf.default
-sed -i '$a src-git ipsec https://github.com/kenzok8/small-package/tree/main/luci-app-ipsec-server' feeds.conf.default
-sed -i '$a src-git pptp https://github.com/kenzok8/small-package/tree/main/luci-app-pptp-server' feeds.conf.default
 #sed -i '$a src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' feeds.conf.default
 
 #内核版本是会随着源码更新而改变的，在coolsnowwolf/lede的源码查看最好，以X86机型为例，源码的target/linux/x86文件夹可以看到有几个内核版本，x86文件夹里Makefile可以查看源码正在使用内核版本
